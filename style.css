@@ -1,0 +1,123 @@
+/* ===== Hacker Theme CSS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg-color: #000000;
+  --text-color: #00ff66;
+  --accent-color: #10900d;
+  --error-color: #ff3b3b;
+  --highlight-color: #00ffaa;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h6 {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+  border-left: 3px solid var(--accent-color);
+  padding-left: 10px;
+  margin: 20px 0;
+}
+
+.segment {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 10px;
+  margin: 18px 0;
+}
+.segment.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer {
+  margin-top: 20px;
+  color: #666;
+  font-size: 12px;
+}
+
+/* پنل رمز */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.panel {
+  background: #0a0a0a;
+  border: 1px solid var(--accent-color);
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 0 20px rgba(16,144,13,0.3);
+}
+.panel h4 {
+  margin: 0 0 12px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.panel label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8ddc8b;
+}
+.panel input {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: 1px solid var(--accent-color);
+  letter-spacing: 6px;
+  text-align: center;
+  font-size: 16px;
+}
+.panel button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#unlock {
+  background: var(--accent-color);
+  color: #000;
+}
+#unlock:hover {
+  background: var(--highlight-color);
+  box-shadow: 0 0 12px var(--highlight-color);
+}
+.close-btn {
+  background: var(--error-color);
+  color: #fff;
+}
+.close-btn:hover {
+  background: #ff6161;
+  box-shadow: 0 0 12px #ff3b3b;
+}
+.msg {
+  margin-top: 10px;
+  height: 18px;
+  color: var(--error-color);
+  font-size: 13px;
+}
+.reveal {
+  display: none;
+  margin-top: 18px;
+  color: #ffef9a;
+  font-size: 18px;
+  text-align: center;
+  border: 1px dashed var(--accent-color);
+  padding: 10px;
+}
