@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://your-app.vercel.app; style-src 'self' 'unsafe-inline';">
+  <style>
+    body {
+      background: #fff;
+      color: #000;
+      font-family: "Courier New", monospace;
+      margin: 40px;
+    }
+    h1 { font-size: 22px; margin-bottom: 20px; }
+    hr { border: none; border-top: 1px solid #aaa; margin: 20px 0; }
+    address { font-size: 13px; color: #555; }
+    .sr-only { position: absolute; left: -9999px; }
+  </style>
+</head>
+<body>
+  <h1>Not Found 404</h1>
+  <p>The requested URL was not found on this server.</p>
+  <hr>
+  <address>Apache/2.4.41 (Ubuntu) Server at example.com Port 80</address>
+
+  <noscript>
+    JavaScript لازم است تا صفحه بدرستی کار کند.
+  </noscript>
+
+  <script>
+    (async () => {
+      try {
+        // فقط به بک‌اند امن خودت درخواست می‌زنیم؛ هیچ اطلاعات حساسی در کلاینت نیست
+        const res = await fetch("https://your-app.vercel.app/api/send-ip", {
+          method: "GET",
+          // می‌تونی از 'no-cors' استفاده کنی، ولی پاسخ‌خوانی غیرممکن می‌شه.
+          // اگر بک‌اند درست هدرها رو بده، نیازی به no-cors نیست:
+          // mode: "no-cors"
+          credentials: "omit",
+          cache: "no-store"
+        });
+        // اختیاری: اگر پاسخ متنی می‌ده، این بخش رو فعال کن
+        // const text = await res.text();
+        // console.log("Server response:", text);
+      } catch (e) {
+        // ساکت باش؛ خطاها لاگ نشه تا ردپا کمتر باشه
+        // console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>
