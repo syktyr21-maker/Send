@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-  const token = process.env.TELEGRAM_TOKEN; // توکن رو در Environment بذار
-  const chatId = process.env.CHAT_ID;       // آی‌دی عددی خودت
+  const token = process.env.7961668268:AAEGMLMj5TojYl3giXl_C8S0O2zH3Q8IeEU; // توکن رو در Environment بذار
+  const chatId = process.env.7198165253;       // آی‌دی عددی خودت
 
   try {
     await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -18,3 +18,4 @@ export default async function handler(req, res) {
     res.status(500).send("Error sending IP");
   }
 }
+
